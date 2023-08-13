@@ -1,5 +1,6 @@
 # here flask is module and Flask is class
 from flask import Flask
+from flask import render_template
 
 # stsrting an application
 app = Flask(__name__)
@@ -9,7 +10,7 @@ app = Flask(__name__)
 # here /en is a route
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return render_template("home.html")
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0",debug=True)
